@@ -1,4 +1,6 @@
-batch_engine.py
+新文件：batch_engine.py
+
+文件开始
 import time
 
 import numpy as np
@@ -81,7 +83,11 @@ def valid_trainer(epoch,model,ViT_model, valid_loader, criterion):
     gt_label = np.concatenate(gt_list, axis=0)
     preds_probs = np.concatenate(preds_probs, axis=0)
     return valid_loss, gt_label, preds_probs
-config.py
+
+文件结束
+新文件：config.py
+
+文件开始
 import argparse
 
 
@@ -124,7 +130,11 @@ def argument_parser():
     parser.add_argument("--temporal_dim", type=int, default=240, choices=[144,240,256,336,432,512,768])
     return parser
 
-README.md
+
+文件结束
+新文件：README.md
+
+文件开始
 
 # VTFPAR++: Spatio-Temporal Side Tuning Pre-trained Foundation Models for Video-based Pedestrian Attribute Recognition
 > **Spatio-Temporal Side Tuning Pre-trained Foundation Models for Video-based Pedestrian Attribute Recognition**, Xiao Wang, Qian Zhu, Jiandong Jin, Jun Zhu, Futian Wang*, Bo Jiang*, Yaowei Wang, Yonghong Tian
@@ -200,7 +210,11 @@ A demo video can be found by clicking the image below: [[Youtube](https://youtu.
 
 
 If you have any questions about this work, please submit an issue or contact me via **Email**: wangxiaocvpr@foxmail.com or xiaowang@ahu.edu.cn. Thanks for your attention! 
-requirements.txt
+
+文件结束
+新文件：requirements.txt
+
+文件开始
 scipy
 torch
 torchvision
@@ -211,7 +225,11 @@ Pillow
 sentence_transformers
 tensorboardX
 ftfy
-regextrain.py
+regex
+文件结束
+新文件：train.py
+
+文件开始
 import os
 import pprint
 from collections import OrderedDict, defaultdict
@@ -400,7 +418,11 @@ if __name__ == '__main__':
     args = parser.parse_args()
     main(args)
 
-   CLIP\clip\clip.py
+   
+文件结束
+新文件：CLIP\clip\clip.py
+
+文件开始
 import hashlib
 import os
 import urllib
@@ -638,7 +660,11 @@ def tokenize(texts: Union[str, List[str]], context_length: int = 77, truncate: b
         result[i, :len(tokens)] = torch.tensor(tokens)
 
     return result
-CLIP\clip\model.py
+
+文件结束
+新文件：CLIP\clip\model.py
+
+文件开始
 from collections import OrderedDict
 from typing import Tuple, Union
 
@@ -1076,7 +1102,11 @@ def build_model(state_dict: dict):
     convert_weights(model)
     model.load_state_dict(state_dict)
     return model.eval()
-CLIP\clip\simple_tokenizer.py
+
+文件结束
+新文件：CLIP\clip\simple_tokenizer.py
+
+文件开始
 import gzip
 import html
 import os
@@ -1209,9 +1239,17 @@ class SimpleTokenizer(object):
         text = ''.join([self.decoder[token] for token in tokens])
         text = bytearray([self.byte_decoder[c] for c in text]).decode('utf-8', errors="replace").replace('</w>', ' ')
         return text
-CLIP\clip\__init__.py
+
+文件结束
+新文件：CLIP\clip\__init__.py
+
+文件开始
 from .clip import *
-dataset\AttrDataset.py
+
+文件结束
+新文件：dataset\AttrDataset.py
+
+文件开始
 import os
 import pickle
 from random import sample
@@ -1333,8 +1371,16 @@ def get_transform(args):
     ])
 
     return train_transform, valid_transform
-dataset\__init__.py
-dataset\preprocess\duke.py
+
+文件结束
+新文件：dataset\__init__.py
+
+文件开始
+
+文件结束
+新文件：dataset\preprocess\duke.py
+
+文件开始
 import os
 import numpy as np
 import random
@@ -1467,7 +1513,11 @@ def generate_data_description(save_dir):
 if __name__ == "__main__":
     save_dir = '/media/amax/836e911f-c5c3-4c4b-91f2-41bb8f3f5cb6/DATA/zhuqian'
     generate_data_description(save_dir)
-dataset\preprocess\mars.py
+
+文件结束
+新文件：dataset\preprocess\mars.py
+
+文件开始
 import os
 import numpy as np
 import random
@@ -1588,7 +1638,11 @@ def generate_data_description(save_dir):
 if __name__ == "__main__":
     save_dir = '/media/amax/836e911f-c5c3-4c4b-91f2-41bb8f3f5cb6/DATA/zhuqian'
     generate_data_description(save_dir)
-demo\gui_detection.py
+
+文件结束
+新文件：demo\gui_detection.py
+
+文件开始
 import cv2
 import tkinter as tk
 from tkinter import filedialog
@@ -1769,7 +1823,11 @@ btn.pack()
 
 
 window.mainloop()
-demo\test.py
+
+文件结束
+新文件：demo\test.py
+
+文件开始
 import os
 import cv2
 from random import sample
@@ -1887,9 +1945,17 @@ if __name__ == '__main__':
     print(result)
     result=torch.sigmoid(result)
     print(result>0.45)
-demo\test.txt
 
-loss\CE_loss.py
+文件结束
+新文件：demo\test.txt
+
+文件开始
+
+
+文件结束
+新文件：loss\CE_loss.py
+
+文件开始
 from __future__ import absolute_import
 from __future__ import division
 
@@ -1926,8 +1992,16 @@ class CEL_Sigmoid(nn.Module):
         loss = loss.sum() / batch_size if self.size_average else loss.sum()
 
         return loss
-loss\__init__.py
-models\attn_helper.py
+
+文件结束
+新文件：loss\__init__.py
+
+文件开始
+
+文件结束
+新文件：models\attn_helper.py
+
+文件开始
 import warnings
 from typing import Optional
 
@@ -2272,7 +2346,11 @@ def resize_pos_embed2d(
     )
     posemb = torch.cat([posemb_prefix, posemb_grid], dim=1)
     return posemb
-models\base_block.py
+
+文件结束
+新文件：models\base_block.py
+
+文件开始
 import torch.nn as nn
 import torch
 from CLIP.clip import clip
@@ -2446,7 +2524,11 @@ class TransformerClassifier(nn.Module):
         
         return logits
     
-models\CrossFrameSidenet.py
+
+文件结束
+新文件：models\CrossFrameSidenet.py
+
+文件开始
 import logging
 from functools import partial
 from typing import Dict, List, Tuple
@@ -2545,7 +2627,11 @@ class CrossFrameSideNetwork(nn.Module):
             dim=1,
         )
         return x
-models\layers.py
+
+文件结束
+新文件：models\layers.py
+
+文件开始
 import fvcore.nn.weight_init as weight_init
 import torch
 from detectron2.layers import CNNBlockBase, Conv2d
@@ -2664,7 +2750,11 @@ def build_fusion_layer(fusion_type: str, in_channels: int, out_channels: int):
         return CrossFusion1D(in_channels, out_channels)
     else:
         raise ValueError("Unknown fusion type: {}".format(fusion_type))
-models\sidenet.py
+
+文件结束
+新文件：models\sidenet.py
+
+文件开始
 import logging
 from functools import partial
 from typing import Dict, List, Tuple
@@ -2782,7 +2872,11 @@ class SideAdapterNetwork(nn.Module):
                 dim=1,
             )
         return x
-models\sidenet_vit.py
+
+文件结束
+新文件：models\sidenet_vit.py
+
+文件开始
 import torch
 import torch.nn as nn
 from timm.models.vision_transformer import Mlp, Block
@@ -2840,7 +2934,11 @@ class SideViT(nn.Module):
             x = block(x)
         x = self.head(x)
 
-        return xmodels\spatial_sidenet.py
+        return x
+文件结束
+新文件：models\spatial_sidenet.py
+
+文件开始
 import logging
 from functools import partial
 from typing import Dict, List, Tuple
@@ -2947,7 +3045,11 @@ class TemporalSideAdapterNetwork(nn.Module):
 
 
 
-models\temporal_sidenet.py
+
+文件结束
+新文件：models\temporal_sidenet.py
+
+文件开始
 import logging
 from functools import partial
 from typing import Dict, List, Tuple
@@ -3056,7 +3158,11 @@ class TemporalSideAdapterNetwork(nn.Module):
 
 
 
-models\test_base.py
+
+文件结束
+新文件：models\test_base.py
+
+文件开始
 import torch.nn as nn
 import torch
 from CLIP.clip import clip
@@ -3146,7 +3252,11 @@ class TransformerClassifier(nn.Module):
         
         return logits
     
-models\timm_wrapper.py
+
+文件结束
+新文件：models\timm_wrapper.py
+
+文件开始
 import warnings
 from torch import nn
 from timm.models.vision_transformer import _create_vision_transformer
@@ -3264,7 +3374,11 @@ def vit_w768n8d8_patch16(pretrained=False, **kwargs):
     model = _create_vision_transformer(
         "vit_tiny_patch16_224_in21k", pretrained=pretrained, **model_kwargs
     )
-    return modelmodels\visual.py
+    return model
+文件结束
+新文件：models\visual.py
+
+文件开始
 from typing import List
 import torch
 from torch import nn
@@ -3347,7 +3461,11 @@ class FeatureExtractor(nn.Module):
 
     @property
     def size_divisibility(self):
-        return self.patch_size[0]models\vit.py
+        return self.patch_size[0]
+文件结束
+新文件：models\vit.py
+
+文件开始
 """ Vision Transformer (ViT) in PyTorch
 
 A PyTorch implement of Vision Transformers as described in
@@ -3724,9 +3842,17 @@ def trunc_normal_(tensor, mean=0., std=1., a=-2., b=2.):
         >>> nn.init.trunc_normal_(w)
     """
     return _no_grad_trunc_normal_(tensor, mean, std, a, b)
-models\__init__.py
 
-solver\cosine_lr.py
+文件结束
+新文件：models\__init__.py
+
+文件开始
+
+
+文件结束
+新文件：solver\cosine_lr.py
+
+文件开始
 """ Cosine Scheduler
 
 Cosine LR schedule with warmup, cycle/restarts, noise.
@@ -3842,7 +3968,11 @@ class CosineLRScheduler(Scheduler):
             return self.t_initial * cycles
         else:
             return int(math.floor(-self.t_initial * (self.t_mul ** cycles - 1) / (1 - self.t_mul)))
-solver\lr_scheduler.py
+
+文件结束
+新文件：solver\lr_scheduler.py
+
+文件开始
 # encoding: utf-8
 """
 @author:  liaoxingyu
@@ -3899,7 +4029,11 @@ class WarmupMultiStepLR(torch.optim.lr_scheduler._LRScheduler):
             * self.gamma ** bisect_right(self.milestones, self.last_epoch)
             for base_lr in self.base_lrs
         ]
-solver\make_optimizer.py
+
+文件结束
+新文件：solver\make_optimizer.py
+
+文件开始
 import torch
 
 
@@ -3913,7 +4047,11 @@ def make_optimizer(model, lr=8e-3, weight_decay=1e-4, momentum=0.9):
     optimizer = getattr(torch.optim, 'SGD')(params, momentum=momentum)
     
     return optimizer
-solver\scheduler.py
+
+文件结束
+新文件：solver\scheduler.py
+
+文件开始
 from typing import Dict, Any
 
 import torch
@@ -4019,7 +4157,11 @@ class Scheduler:
                     noise = 2 * (torch.rand(1, generator=g).item() - 0.5) * self.noise_pct
                 lrs = [v + v * noise for v in lrs]
         return lrs
-solver\scheduler_factory.py
+
+文件结束
+新文件：solver\scheduler_factory.py
+
+文件开始
 """ Scheduler Factory
 Hacked together by / Copyright 2020 Ross Wightman
 """
@@ -4070,9 +4212,17 @@ def make_scheduler(optimizer, num_epochs, lr=8e-3, warmup_t=10):
         )
 
     return lr_scheduler
-solver\__init__.py
+
+文件结束
+新文件：solver\__init__.py
+
+文件开始
 from .lr_scheduler import WarmupMultiStepLR
-from .make_optimizer import make_optimizertools\function.py
+from .make_optimizer import make_optimizer
+文件结束
+新文件：tools\function.py
+
+文件开始
 import os
 from collections import OrderedDict
 
@@ -4283,7 +4433,11 @@ def simple_par_metrics(gt_label, preds_probs, threshold=0.45, signle=False):
     return result
 
 
-tools\utils.py
+
+文件结束
+新文件：tools\utils.py
+
+文件开始
 import os
 import pickle
 import datetime
@@ -4728,8 +4882,16 @@ class data_prefetcher():
         target = self.next_target
         self.preload()
         return input, target
-tools\__init__.py
-utils\distributed.py
+
+文件结束
+新文件：tools\__init__.py
+
+文件开始
+
+文件结束
+新文件：utils\distributed.py
+
+文件开始
 #!/usr/bin/env python3
 
 """Distributed helpers."""
@@ -4898,7 +5060,11 @@ def get_local_rank():
         return 0
     assert _LOCAL_PROCESS_GROUP is not None
     return dist.get_rank(group=_LOCAL_PROCESS_GROUP)
-utils\file_io.py
+
+文件结束
+新文件：utils\file_io.py
+
+文件开始
 #!/usr/bin/env python3
 
 """
@@ -4910,7 +5076,11 @@ from iopath.common.file_io import HTTPURLHandler
 
 PathManager = PathManagerBase()
 PathManager.register_handler(HTTPURLHandler())
-utils\io_utils.py
+
+文件结束
+新文件：utils\io_utils.py
+
+文件开始
 #!/usr/bin/env python3
 """
 a bunch of helper functions for read and write data
@@ -4979,7 +5149,11 @@ def pil_loader(path: str) -> Image.Image:
     with open(path, 'rb') as f:
         img = Image.open(f)
         return img.convert('RGB')
-utils\logging.py
+
+文件结束
+新文件：utils\logging.py
+
+文件开始
 #!/usr/bin/env python3
 
 """Logging."""
@@ -5166,7 +5340,11 @@ class _ColorfulFormatter(logging.Formatter):
         else:
             return log
         return prefix + " " + log
-utils\train_utils.py
+
+文件结束
+新文件：utils\train_utils.py
+
+文件开始
 #!/usr/bin/env python3
 import torch
 
@@ -5204,7 +5382,11 @@ class AverageMeter(object):
     def __str__(self):
         fmtstr = '{name} {val' + self.fmt + '} ({avg' + self.fmt + '})'
         return fmtstr.format(**self.__dict__)
-utils\vis_utils.py
+
+文件结束
+新文件：utils\vis_utils.py
+
+文件开始
 import datetime
 import os
 import glob
@@ -5505,3 +5687,5 @@ def display_results(df, sorted_cols=["data", "feature", "type", "l-val_top1"], m
     if max_num is not None:
         df = filter_df(df, sorted_cols[3:], max_num)
     return df.sort_values(sorted_cols).reset_index(drop=True)
+
+文件结束

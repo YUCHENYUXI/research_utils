@@ -45,10 +45,10 @@ def save_text_files(root_path, output_file, blacklist):
                 file_path = os.path.join(dirpath, filename)
                 if is_text_file(file_path):
                     relative_path = os.path.relpath(file_path, root_path)
-                    f.write(f"{relative_path}\n")
-                    # f.write("新文件："f"{relative_path}\n")
+                    # f.write(f"{relative_path}\n")
+                    f.write("新文件："f"{relative_path}\n")
                     with open(file_path, 'r', encoding='utf-8') as file:
-                        # f.write("\n文件开始\n"+file.read() + "\n文件结束\n")
+                        f.write("\n文件开始\n"+file.read() + "\n文件结束\n")
                         f.write(file.read())
 
 
